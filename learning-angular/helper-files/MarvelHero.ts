@@ -4,4 +4,5 @@ export interface MarvelHero {
     imageURL: string;
     description: string;
     currentLocation?: string;
+    showOnList: boolean;
 }

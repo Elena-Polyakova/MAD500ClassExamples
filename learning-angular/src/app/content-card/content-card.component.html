@@ -1,7 +1,14 @@
 <img class="poster-image" [src]="content.imageURL">
+<div>
+    the ID is {{content.id}}
+</div>
 <div class="name" *ngIf="content.name === 'Spiderman'">
     {{content.name}}
 </div>
 <div class="description">
     {{content.description}}
+</div>
+<div class="current-location">
+    {{ content | defaultType }}
+    <!-- This will make sure a location is show no matter what  -->
 </div>

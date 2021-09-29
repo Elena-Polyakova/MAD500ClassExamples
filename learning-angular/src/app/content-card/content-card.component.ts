@@ -14,5 +14,9 @@ export class ContentCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  uniqueName(): string {
+    return this.content.name + " " + this.content.id;
+  }
+
 
 }

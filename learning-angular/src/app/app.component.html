@@ -1,2 +1,44 @@
-<app-content-card *ngFor="let item of contentList; index as i; first as isFirst" [content]="item"
+<div class="rebootCharacterWrapper">
+  <h4>Template reference variable</h4>
+  This is bob <input #bob>
+  <button (click)="triggerAlertBob()">
+    Click me to see bob's content
+  </button>
+</div>
+<div>
+  {{ bob.value }}
+</div>
+
+
+<div class="rebootCharacterWrapper">
+  <h4>One way binding</h4>
+  This is enzo <input [value]="enzo">
+  <button (click)="triggerAlertEnzo()">
+    Click me to reset enzo
+  </button>
+</div>
+<div>
+  {{ enzo }}
+</div>
+<!-- <button onclick="console.log('{{bob.value}}')">
+
+</button> -->
+
+<div class="rebootCharacterWrapper">
+  <h4>Two way binding</h4>
+  This is dot <input [(ngModel)]="dot">
+  <button (click)="triggerAlertDot()">
+    Dot's button
+  </button>
+</div>
+<h4>Pre existing pipe examples</h4>
+<p>
+  Todays date is {{ today | date | uppercase }}
+</p>
+
+<p>
+  {{ dot | uppercase }}
+</p>
+<!-- now we are using a pipe on our content list -->
+<app-content-card *ngFor="let item of contentList | heroShortList; index as i; first as isFirst" [content]="item"
   [class.is-first]="isFirst" class="content-{{i}}"></app-content-card>
