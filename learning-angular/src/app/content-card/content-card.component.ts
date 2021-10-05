@@ -8,6 +8,7 @@ import { MarvelHero } from 'helper-files/MarvelHero';
 })
 export class ContentCardComponent implements OnInit {
   @Input() content: any;
+  specialCheck = "Ironman";
   constructor() {
 
   }

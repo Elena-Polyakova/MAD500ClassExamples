@@ -31,10 +31,10 @@ export class AppComponent implements OnInit {
   },
   {
     id: 2,
-    name: "Spiderman",
+    name: "Wanda",
     imageURL: "https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png",
-    description: "Obviously the best marvel hero",
-    showOnList: false
+    description: "Fancy magic powers",
+    showOnList: true,
   },
   {
     id: 3,
