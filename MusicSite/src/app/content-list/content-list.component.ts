@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
+  message: string;
   musicList = [{
     id: 0,
     author: 'Dragonforce',
@@ -24,6 +25,7 @@ export class ContentListComponent implements OnInit {
     id: 2,
     author: 'Ed Sheeran',
     title: 'Perfect',
+    type: "Pop",
     body: 'Actually really talented',
     tags: ['relationship goals']
   }, {
@@ -39,10 +41,46 @@ export class ContentListComponent implements OnInit {
     title: 'Time in a bottle',
     body: 'The song from days of future past',
     tags: ['quicksilver', 'wandasbrother']
+  }, {
+    id: 5,
+    author: 'Avenged Sevenfold',
+    type: 'metal',
+    title: 'Almost easy',
+    body: 'An oldie but a goodie',
+  }, {
+    id: 6,
+    author: 'Nightwish',
+    type: 'power metal',
+    title: 'Nemo',
+    body: 'This is not a power metal song, but that is ok',
   }];
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  checkIfTitleExists(title: string): void {
+    //do my check if the title exists
+    // console.log(title);
+
+    // this.message = "Song not found";
+    // for (let i = 0; i < this.musicList.length; i++) {
+    //   if (this.musicList[i].title === title) {
+    //     this.message = "Found your song!";
+    //     break;
+    //   }
+    // }
+
+    let filter = this.musicList.filter(song => song.title === title);
+    if (filter.length > 0) {
+      this.message = "Song found";
+    }
+    else {
+      this.message = "No song found with that title";
+    }
+    console.log("spread operator", ...this.musicList);
+    console.log("Just the array", this.musicList);
+    this.musicList = [...this.musicList];
+
+  }
 }
