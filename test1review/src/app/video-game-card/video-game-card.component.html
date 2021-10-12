@@ -1,0 +1,11 @@
+<div class="title">{{ videoGame.title }}</div>
+<div class="genre">{{ videoGame.genre }}</div>
+<div class="rating">{{ videoGame.rating }}</div>
+<div class="developer">{{ videoGame.developer }}</div>
+<div class="consoles">
+    <span [class]="game" *ngFor="let game of videoGame.consoles; index as i; last as isLast"><span
+            *ngIf="i < 3">{{game}}<span *ngIf="!isLast && i < 2">, </span>
+        </span>
+        <span *ngIf="i == 3">...</span>
+    </span>
+</div>

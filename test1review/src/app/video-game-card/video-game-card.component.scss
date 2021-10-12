@@ -1,0 +1,36 @@
+:host{
+    display: inline-block;
+    border: 1px dashed #444;
+    padding: 16px;
+    margin: 8px;
+    width: 150px;
+    float: left;
+}
+.title{
+    color: #ff0000;
+    font-size: 24px;
+    text-decoration: underline;
+}
+.genre{
+    text-align: center;
+}
+.rating{
+    font-size: 20px;
+    height: 20px;
+    width: 50px;
+}
+.developer{
+    font-weight: bold;
+}
+.consoles{
+
+    span{
+        font-style: italic;
+    }
+}
+.PC{
+    color:#0000ff;
+}
+.Switch{
+    color:#e60012;
+}
