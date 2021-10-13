@@ -6,18 +6,22 @@
     {{ message }}
 </div>
 
-<!-- <app-content-card *ngFor="let song of musicList; last as isLast" [class.is-last]="isLast" [song]="song"
+<app-content-card appHoverCard [borderVisible]="isLast || isFirst"
+    *ngFor="let song of musicList; last as isLast; first as isFirst" [class.is-last]="isLast" [song]="song"
     [class.highlight-me]="checkTitle.value === song.title">
-</app-content-card> -->
+</app-content-card>
 
-<app-content-card *ngFor="let song of musicList | typeFilter: 'metal'; last as isLast" [class.is-last]="isLast"
+<app-content-card appHoverCard [borderVisible]="isLast || isFirst"
+    *ngFor="let song of musicList | typeFilter: 'metal'; last as isLast; first as isFirst" [class.is-last]="isLast"
     [song]="song" [class.highlight-me]="checkTitle.value === song.title" class="metal">
 </app-content-card>
 
-<app-content-card *ngFor="let song of musicList | typeFilter: 'power metal'; last as isLast" [class.is-last]="isLast"
-    [class.highlight-me]="checkTitle.value === song.title" [song]="song" class="power-metal">
+<app-content-card appHoverCard [borderVisible]="isLast || isFirst"
+    *ngFor="let song of musicList | typeFilter: 'power metal'; last as isLast; first as isFirst"
+    [class.is-last]="isLast" [class.highlight-me]="checkTitle.value === song.title" [song]="song" class="power-metal">
 </app-content-card>
 
-<app-content-card *ngFor="let song of musicList | typeFilter: 'Pop'; last as isLast" [class.is-last]="isLast"
+<app-content-card appHoverCard [borderVisible]="isLast || isFirst"
+    *ngFor="let song of musicList | typeFilter: 'Pop'; last as isLast; first as isFirst" [class.is-last]="isLast"
     [song]="song" class="pop" [class.highlight-me]="checkTitle.value === song.title">
 </app-content-card>
