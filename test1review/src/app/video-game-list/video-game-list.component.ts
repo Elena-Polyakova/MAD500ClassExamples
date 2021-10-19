@@ -7,33 +7,41 @@ import { VideoGame } from '../video-game-card/video-game-card.component';
   styleUrls: ['./video-game-list.component.scss']
 })
 export class VideoGameListComponent implements OnInit {
-  videoGame1: VideoGame;
-  videoGame2: VideoGame;
-  videoGame3: VideoGame;
+  videoGames: VideoGame[];
   constructor() {
-    this.videoGame1 = {
+    this.videoGames = [{
       title: "Halo",
       genre: "FPS",
       developer: "Bungie",
       rating: 10,
       consoles: ["PC", "XBOX Series X"]
-    };
-    this.videoGame2 = {
+    }, {
       title: "Metroid Dread",
       genre: "Metroidvania",
       developer: "Nintendo",
       consoles: ["Switch"]
-    }
-    this.videoGame3 = {
+    }, {
       title: "Hades",
       genre: "Rogue lite",
       developer: "Supergiant Games",
       rating: 11,
       consoles: ["Switch", "PC", "XBOX", "PS5", "PS4"]
-    }
+    }];
   }
 
   ngOnInit(): void {
   }
 
+  addGame(game: string): void {
+    console.log("before", this.videoGames);
+    this.videoGames.push({
+      title: game,
+      genre: "FPS",
+      developer: "Activision Blizzard",
+      rating: 1,
+      consoles: ["PC", "XBOX Series X"]
+    });
+    this.videoGames = [...this.videoGames];
+    console.log("after", this.videoGames);
+  }
 }

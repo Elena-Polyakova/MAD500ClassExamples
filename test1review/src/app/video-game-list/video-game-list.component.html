@@ -1,3 +1,4 @@
-<app-video-game-card [videoGame]="videoGame1"></app-video-game-card>
-<app-video-game-card [videoGame]="videoGame2"></app-video-game-card>
-<app-video-game-card [videoGame]="videoGame3"></app-video-game-card>
+<app-video-game-card *ngFor="let game of videoGames" [videoGame]="game">
+</app-video-game-card>
+<input #addThisGame>
+<button (click)="addGame(addThisGame.value)">Add a game</button>

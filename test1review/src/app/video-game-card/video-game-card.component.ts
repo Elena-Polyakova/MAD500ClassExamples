@@ -22,5 +22,5 @@ export interface VideoGame {
   genre: string;
   developer: string;
   rating?: number;
-  consoles: string[];
+  consoles?: string[];
 }
