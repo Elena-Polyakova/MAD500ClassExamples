@@ -50,6 +50,61 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit(): void {
+
+    console.log("First console log");
+    setTimeout(function () {
+      console.log("Second console log");
+    }, 0);
+
+    Promise.resolve().then(function () {
+      console.log("Third console log");
+    });
+    Promise.resolve().then(function () {
+      console.log("Fifth console log");
+    });
+    Promise.resolve().then(function () {
+      console.log("Six console log");
+    });
+    console.log("Fourth console log");
+
+
+    let ourPromise = new Promise((success, fail) => {
+      let testPass = false;
+      if (testPass) {
+        success("Success was achieved!");
+      }
+      else {
+        fail("Failure :(");
+      }
+    });
+
+    ourPromise.then(function (successResult) {
+      console.log("This is totally the success method", successResult)
+    }).catch(bananas => {
+      console.log("Sad face, it failed", bananas)
+    });
+
+
+    let getStuff = async function () {
+      return "stuff";
+    }
+
+    let getTheSameStuff = function () {
+      return Promise.resolve("stuff");
+    }
+
+    //different way to represent functions
+    let getAllTheStuff = async () => {
+      const theFirstStuff = getStuff();
+      const theSecondStuff = getTheSameStuff();
+      //returns both promises
+      return await Promise.all([theFirstStuff, theSecondStuff]);
+    }
+
+    console.log("get all the stuff", getAllTheStuff());
+    // 1 3 4 2
+    // 1 4 2 3
+    // 1 2 3 4
   }
 
   triggerAlertBob(): void {
