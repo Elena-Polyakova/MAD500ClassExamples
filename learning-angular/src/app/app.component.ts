@@ -1,6 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ContentList } from 'helper-files/ContentList';
 import { MarvelHero } from 'helper-files/MarvelHero';
 import { ContentService } from './services/content.service';
 
