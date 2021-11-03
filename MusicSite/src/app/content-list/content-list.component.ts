@@ -84,8 +84,8 @@ export class ContentListComponent implements OnInit {
     this.musicList = [...this.musicList];
 
   }
-  addContent(newContent: Content) {
-    this.musicList.push(newContent);
+  addContent(msg: string) {
+    console.log(msg);
     this.musicList = [...this.musicList];
   }
 }

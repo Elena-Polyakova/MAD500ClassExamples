@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 
 @Component({
@@ -7,7 +7,8 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./create-content.component.scss']
 })
 export class CreateContentComponent implements OnInit {
-  @Output() addContentEvent = new EventEmitter<Content>();
+  @Output() addContentEvent = new EventEmitter<any>();
+  @Input() contentList: Content[];
   message: string;
   id: any;
   author: any;
@@ -25,7 +26,7 @@ export class CreateContentComponent implements OnInit {
   addContentPromise() {
     let addContentPromise = new Promise((successFunction, failFunction) => {
       if (this.id && this.author && this.title && this.body) {
-        this.addContentEvent.emit({
+        this.contentList.push({
           id: this.id,
           author: this.author,
           imgUrl: this.imgUrl,
@@ -33,8 +34,10 @@ export class CreateContentComponent implements OnInit {
           title: this.title,
           body: this.body,
           tags: this.tags.split(',')
-        })
-        successFunction("Content successfully added");
+        });
+        this.addContentEvent.emit("worked");
+        this.contentList = [...this.contentList];
+        successFunction("Content successfully added using an array reference");
       }
       else {
         failFunction("500");

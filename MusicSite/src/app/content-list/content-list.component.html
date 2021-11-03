@@ -1,4 +1,4 @@
-<app-create-content (addContentEvent)="addContent($event)"></app-create-content>
+<app-create-content [contentList]="musicList" (addContentEvent)="addContent($event)"></app-create-content>
 <form onsubmit="return false;">
     <input #checkTitle>
     <button type="submit" (click)="checkIfTitleExists(checkTitle.value)">Does it exist?</button>
