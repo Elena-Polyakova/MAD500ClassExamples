@@ -1,0 +1,35 @@
+<div>
+    <label for="id">ID*: </label><input id="id" [(ngModel)]="id">
+    <div style="clear: both;"></div>
+</div>
+<div>
+    <label for="author">Author*: </label><input id="author" [(ngModel)]="author">
+    <div style="clear: both;"></div>
+</div>
+<div>
+    <label for="imgUrl">Image URL:</label><input id="imgUrl" [(ngModel)]="imgUrl">
+    <div style="clear: both;"></div>
+</div>
+<div>
+    <label for="type">Type: </label><input id="type" [(ngModel)]="type">
+    <div style="clear: both;"></div>
+</div>
+<div>
+    <label for="title">Title*: </label><input id="title" [(ngModel)]="title">
+    <div style="clear: both;"></div>
+</div>
+<div>
+    <label for="body">Body*: </label><input id="body" [(ngModel)]="body">
+    <div style="clear: both;"></div>
+</div>
+<div>
+    <label for="tags">Tags: </label><input id="tags" [(ngModel)]="tags">
+    <div style="clear: both;"></div>
+</div>
+<div>
+    <button (click)="addContentPromise()">Add
+        Content</button>
+</div>
+<div class="error">
+    <div [innerHTML]="message"></div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Content } from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-content-list',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentListComponent implements OnInit {
   message: string;
-  musicList = [{
+  musicList: Content[] = [{
     id: 0,
     author: 'Dragonforce',
     imgUrl: 'https://upload.wikimedia.org/wikipedia/en/f/f6/Through_the_Fire_and_Flames_Cover_Art.jpg',
@@ -82,5 +83,9 @@ export class ContentListComponent implements OnInit {
     console.log("Just the array", this.musicList);
     this.musicList = [...this.musicList];
 
+  }
+  addContent(newContent: Content) {
+    this.musicList.push(newContent);
+    this.musicList = [...this.musicList];
   }
 }

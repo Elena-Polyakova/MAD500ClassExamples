@@ -7,6 +7,8 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { TypeFilterPipe } from './type-filter.pipe';
 import { HoverStyleDirective } from './hover-style.directive';
 import { HoverCardDirective } from './hover-card.directive';
+import { CreateContentComponent } from './create-content/create-content.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { HoverCardDirective } from './hover-card.directive';
     ContentListComponent,
     TypeFilterPipe,
     HoverStyleDirective,
-    HoverCardDirective
+    HoverCardDirective,
+    CreateContentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
