@@ -13,6 +13,14 @@ export class AppComponent implements OnInit {
   public enzo: any;
   public dot: any;
   public today = new Date();
+  public isLoading = true;
+  newContentItem: MarvelHero = {
+    name: "Hawkeye",
+    imageURL: "https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png",
+    description: "pew pew arrows",
+    currentLocation: "Iowa",
+    showOnList: true
+  };
   contentList: MarvelHero[] = [];
 
   public constructor(private contentService: ContentService) {
@@ -22,10 +30,27 @@ export class AppComponent implements OnInit {
 
   public ngOnInit(): void {
     // this.contentList = this.contentService.getContent();
-    this.contentService.getContentObs().subscribe(
-      contentList =>
+    this.contentService.getContent().subscribe(
+      contentList => {
+        this.isLoading = false;
         this.contentList = contentList
+      }
     );
+  }
+  save(): void {
+    console.log("add initiated", this.newContentItem);
+    this.contentService.addContent(this.newContentItem).subscribe(content => {
+      console.log(content);
+      this.contentList.push(content);
+      this.contentList = [...this.contentList];
+    });
+  }
+  update(): void {
+    this.contentList[this.newContentItem.id || 0] = this.newContentItem; //we update the content ourselves
+
+    this.contentService.updateContent(this.newContentItem).subscribe(() => {
+      console.log("Content updated:");
+    });
   }
 
   triggerAlertBob(): void {

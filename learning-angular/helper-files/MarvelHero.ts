@@ -1,5 +1,5 @@
 export interface MarvelHero {
-    id: number;
+    id?: number;
     name: string;
     imageURL: string;
     description: string;

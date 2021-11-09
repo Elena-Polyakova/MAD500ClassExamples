@@ -3,14 +3,14 @@
     the <span appHighlight>ID</span> is {{content.id}}
 </div>
 <div class="name-wrapper" [ngSwitch]="content.name">
-    <div class="name spiderman" *ngSwitchCase='"Spiderman"'>
+    <!-- <div class="name spiderman" *ngSwitchCase='"Spiderman"'>
         Best hero ever: {{content.name}}
     </div>
     <div class="name ironman" *ngSwitchCase='specialCheck'>
         He has a heart thing: {{content.name}}
-    </div>
-    <div class="name randomhero" *ngSwitchDefault>
-        Some other hero that isn't as cool
+    </div> -->
+    <div class="name randomhero">
+        {{content.name}}
     </div>
 </div>
 <div class="description">

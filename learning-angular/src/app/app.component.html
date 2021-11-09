@@ -1,4 +1,4 @@
-<h3>Week 5 below this line</h3>
+<!-- <h3>Week 5 below this line</h3>
 <hr>
 
 <div>
@@ -29,11 +29,11 @@
 </div>
 <div>
   {{ enzo }}
-</div>
+</div> -->
 <!-- <button onclick="console.log('{{bob.value}}')">
 
 </button> -->
-
+<!-- 
 <div class="rebootCharacterWrapper">
   <h4>Two way binding</h4>
   This is dot <input [(ngModel)]="dot">
@@ -48,7 +48,12 @@
 
 <p>
   {{ dot | uppercase }}
-</p>
+</p> -->
+
 <!-- now we are using a pipe on our content list -->
-<app-content-card *ngFor="let item of contentList | heroShortList; index as i; first as isFirst" [content]="item"
+
+<button (click)="save()">Add Hawkeye</button>
+
+<div *ngIf="isLoading">Loading content, please wait...</div>
+<app-content-card *ngFor="let item of contentList; index as i; first as isFirst" [content]="item"
   [class.is-first]="isFirst" class="content-{{i}}"></app-content-card>
