@@ -7,6 +7,7 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { TypeFilterPipe } from './type-filter.pipe';
 import { HoverStyleDirective } from './hover-style.directive';
 import { HoverCardDirective } from './hover-card.directive';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HoverCardDirective } from './hover-card.directive';
     ContentListComponent,
     TypeFilterPipe,
     HoverStyleDirective,
-    HoverCardDirective
+    HoverCardDirective,
+    MessagesComponent
   ],
   imports: [
     BrowserModule
