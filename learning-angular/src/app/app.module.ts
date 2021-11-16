@@ -10,6 +10,9 @@ import { DefaultTypePipe } from './default-type.pipe';
 import { HeroShortListPipe } from './hero-short-list.pipe';
 import { HighlightDirective } from './highlight.directive';
 import { InMemoryDataService } from './services/in-memory-data.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -27,9 +30,13 @@ import { InMemoryDataService } from './services/in-memory-data.service';
       InMemoryDataService, {
       dataEncapsulation: false,
       delay: 3000
-    })
+    }),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
+  entryComponents: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

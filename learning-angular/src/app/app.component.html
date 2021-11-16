@@ -52,7 +52,12 @@
 
 <!-- now we are using a pipe on our content list -->
 
-<button (click)="save()">Add Hawkeye</button>
+<button mat-raised-button color="accent" (click)="save()">Add Hawkeye</button>
+
+<mat-form-field>
+  <mat-label>Some text no</mat-label>
+  <input id="myInput" matInput placeholder="">
+</mat-form-field>
 
 <div *ngIf="isLoading">Loading content, please wait...</div>
 <app-content-card *ngFor="let item of contentList; index as i; first as isFirst" [content]="item"
