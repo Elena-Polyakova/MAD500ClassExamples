@@ -13,11 +13,14 @@ export class ContentListComponent implements OnInit {
   constructor(private contentService: ContentServiceService) { }
 
   ngOnInit(): void {
+    this.getContent();
+  }
+
+  getContent(): void {
     this.contentService.getContent().subscribe(contentList => {
       this.musicList = contentList;
     });
   }
-
   checkIfTitleExists(title: string): void {
     //do my check if the title exists
     // console.log(title);
@@ -41,5 +44,18 @@ export class ContentListComponent implements OnInit {
     console.log("Just the array", this.musicList);
     this.musicList = [...this.musicList];
 
+  }
+  addContentToList(newCoconut: any): void {
+    console.log("new coconut from the list", newCoconut)
+    this.musicList.push(newCoconut);
+    this.musicList = [...this.musicList];
+    // this.getContent();
+  }
+  updateContentToList(newCoconut: any): void {
+    console.log("updated coconut from the list", newCoconut)
+    let songIndex = this.musicList.map(e => e.id).indexOf(newCoconut.id)
+    this.musicList[songIndex] = newCoconut;
+    this.musicList = [...this.musicList];
+    // this.getContent();
   }
 }
