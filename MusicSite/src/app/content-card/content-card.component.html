@@ -19,7 +19,14 @@
 </div>
 <div class="tags" *ngIf="song.tags">
     <strong>Tags:</strong>
-    <span class="tag" *ngFor="let tag of song.tags; last as isLast">
+    <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal"
+        (cdkDropListDropped)="drop($event)">
+        <mat-chip appHoverStyle class="tag" hoverStyle="font-weight" cdkDrag
+            *ngFor="let tag of song.tags; last as isLast">
+            {{tag}}
+        </mat-chip>
+    </mat-chip-list>
+    <!-- <span class="tag" *ngFor="let tag of song.tags; last as isLast">
         <span appHoverStyle hoverStyle="font-weight">{{ tag }}</span><span *ngIf="!isLast">, </span>
-    </span>
+    </span> -->
 </div>

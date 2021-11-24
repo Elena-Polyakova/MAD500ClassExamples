@@ -2,8 +2,12 @@
 </app-create>
 
 <form onsubmit="return false;">
-    <input #checkTitle>
-    <button type="submit" (click)="checkIfTitleExists(checkTitle.value)">Does it exist?</button>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter Title</mat-label>
+        <input matInput #checkTitle>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" (click)="checkIfTitleExists(checkTitle.value)">Does it
+        exist?</button>
 </form>
 <div class="title-check">
     {{ message }}

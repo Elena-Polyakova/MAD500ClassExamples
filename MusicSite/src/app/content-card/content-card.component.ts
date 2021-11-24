@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-content-card',
@@ -17,5 +18,7 @@ export class ContentCardComponent implements OnInit {
   showId(): void {
     console.log(this.song.id);
   }
-
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.song.tags, event.previousIndex, event.currentIndex);
+  }
 }

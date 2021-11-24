@@ -11,8 +11,16 @@ import { MessagesComponent } from './messages/messages.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
-import { CreateComponent } from './create/create.component';
+import { CreateComponent, CreateDialogComponent } from './create/create.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatChipsModule } from '@angular/material/chips';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     HoverStyleDirective,
     HoverCardDirective,
     MessagesComponent,
-    CreateComponent
+    CreateComponent,
+    CreateDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +42,19 @@ import { FormsModule } from '@angular/forms';
       dataEncapsulation: false,
       delay: 2000
     }),
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatChipsModule,
+    DragDropModule,
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
+  // entryComponents: [
+  //   CreateDialogComponent
+  // ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
