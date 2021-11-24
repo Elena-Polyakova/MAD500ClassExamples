@@ -1,10 +1,12 @@
-<div [ngSwitch]="song.imgUrl">
+<mat-card>
+  <div [ngSwitch]="song.imgUrl">
     <img *ngSwitchCase="null" src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg">
     <img *ngSwitchDefault (click)="showId()" [src]="song.imgUrl">
 </div>
 
 <!-- <img *ngIf="song.imgUrl" (click)="showId()" [src]="song.imgUrl">
 <img *ngIf="!song.imgUrl" src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg"> -->
+
 <div class="author">
     <strong>Artist:</strong> {{song.author}}
 </div>
@@ -23,3 +25,4 @@
         <span appHoverStyle hoverStyle="font-weight">{{ tag }}</span><span *ngIf="!isLast">, </span>
     </span>
 </div>
+</mat-card>

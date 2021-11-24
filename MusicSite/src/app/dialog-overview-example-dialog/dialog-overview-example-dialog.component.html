@@ -1,0 +1,50 @@
+<!--<p>dialog-overview-example-dialog works!</p>-->
+<!--create dialog-->
+<div mat-dialog-content>
+  <h2>Add values to your content array here:</h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label>ID: </mat-label>
+    <input matInput [(ngModel)]="data.tempId">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+  <mat-label> Author:* </mat-label>
+    <input matInput [(ngModel)]="data.newContent.author">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+  <mat-label>ImgUrl: </mat-label>
+    <input matInput [(ngModel)]="data.newContent.imgUrl">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+  <mat-label>Type:</mat-label>
+    <input matInput [(ngModel)]="data.newContent.type">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+  <mat-label>Title:*</mat-label>
+    <input matInput [(ngModel)]="data.newContent.title">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+  <mat-label>Body:*  </mat-label>
+    <input mapInput [(ngModel)]="data.newContent.body">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+  <mat-label>Tags:  </mat-label>
+    <input matInput [(ngModel)]="data.tempTags">
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="addCoconutFromDialog()">Add Song </button>
+  <button mat-button mat-dialog-close>Not now</button>
+</div>
+
+
+
+
+

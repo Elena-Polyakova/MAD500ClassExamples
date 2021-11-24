@@ -13,6 +13,15 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { CreateComponent } from './create/create.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatExpansionModule} from "@angular/material/expansion";
+import {MatListModule} from "@angular/material/list";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDialogModule} from "@angular/material/dialog";
+import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -23,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     HoverStyleDirective,
     HoverCardDirective,
     MessagesComponent,
-    CreateComponent
+    CreateComponent,
+    DialogOverviewExampleDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +43,15 @@ import { FormsModule } from '@angular/forms';
       dataEncapsulation: false,
       delay: 2000
     }),
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatExpansionModule,
+    MatListModule,
+    MatDialogModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

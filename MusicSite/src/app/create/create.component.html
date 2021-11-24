@@ -1,39 +1,49 @@
-<div>
-    <label>
-        Id: <input [(ngModel)]="tempId">
-    </label>
-</div>
-<div>
-    <label>
-        Author: <input [(ngModel)]="newContent.author">
-    </label>
-</div>
-<div>
-    <label>
-        imgUrl: <input [(ngModel)]="newContent.imgUrl">
-    </label>
-</div>
-<div>
-    <label>
-        Type: <input [(ngModel)]="newContent.type">
-    </label>
-</div>
-<div>
-    <label>
-        Title: <input [(ngModel)]="newContent.title">
-    </label>
-</div>
-<div>
-    <label>
-        Body: <input [(ngModel)]="newContent.body">
-    </label>
-</div>
-<div>
-    <label>
-        Tags: <input [(ngModel)]="tempTags">
-    </label>
-</div>
-<div>
-    <button (click)="addCoconut()">Add Song</button>
-    <button (click)="updateCoconut()">Update Song</button>
-</div>
+<mat-list>
+  <mat-list-item>
+    <span matListIcon class="material-icons">home</span>
+    <h3 matLine>Your Content Page</h3>
+  </mat-list-item>
+</mat-list>
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+     Enter content values to add
+    </mat-panel-title>
+    <mat-panel-description>
+      These are your content values
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <p>Id:
+    <input matInput [(ngModel)]="tempId">
+    </p>
+  <p> Author:
+    <input matInput [(ngModel)]="newContent.author">
+    </p>
+  <p>ImgUrl:
+    <input matInput [(ngModel)]="newContent.imgUrl">
+  </p>
+  <p>Type:
+    <input matInput [(ngModel)]="newContent.type">
+  </p>
+  <p>Title:
+    <input matInput [(ngModel)]="newContent.title">
+  </p>
+  <p>Body:
+    <input mapInput [(ngModel)]="newContent.body">
+  </p>
+  <p>Tags:
+    <input matInput [(ngModel)]="tempTags">
+  </p>
+
+  <mat-action-row>
+    <button mat-raised-button color="primary" (click)="addCoconut()">Add Song </button>
+    <button mat-raised-button color="primary" (click)="updateCoconut()">Update Song</button>
+  </mat-action-row>
+
+</mat-expansion-panel>
+
+<button mat-raised-button color="accent" class="center" (click)="showDialog()">Add content</button>
+
+

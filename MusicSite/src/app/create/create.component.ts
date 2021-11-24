@@ -2,6 +2,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { ContentServiceService } from '../services/content-service.service';
 import { MessageService } from '../services/message.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {DialogOverviewExampleDialogComponent} from "../dialog-overview-example-dialog/dialog-overview-example-dialog.component";
 
 @Component({
   selector: 'app-create',
@@ -14,7 +16,7 @@ export class CreateComponent implements OnInit {
   newContent: Content;
   tempId: string;
   tempTags: string;
-  constructor(private contentService: ContentServiceService, private messageService: MessageService) {
+  constructor(private contentService: ContentServiceService, private messageService: MessageService, public dialog: MatDialog) {
     this.newContent = {
       author: '',
       title: '',
@@ -54,5 +56,20 @@ export class CreateComponent implements OnInit {
     });
   }
 
+  //show dialog
+  showDialog(): void{
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
+      width: '250px',
+      data: {tempId: this.tempId, tempTags: this.tempTags,  newContent: this.newContent = {
+          body: "",
+          author: "",
+          title: ""
+        }},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
 }
