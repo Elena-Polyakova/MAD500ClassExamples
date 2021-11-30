@@ -1,3 +1,6 @@
+<a [routerLink]="['/content',song.id]"
+   routerLinkActive="active">Content Detail</a><br>
+
 <div [ngSwitch]="song.imgUrl">
     <img *ngSwitchCase="null" src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg">
     <img *ngSwitchDefault (click)="showId()" [src]="song.imgUrl">

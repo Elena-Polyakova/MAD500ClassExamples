@@ -21,6 +21,11 @@ export class ContentServiceService {
     this.messageService.addMessage("Content Retrieved!");
     return this.http.get<Content[]>("api/coconuts");
   }
+  //get content from id
+  getContentItem(id: number): Observable<Content> {
+    return this.http.get<Content>("api/bananas/" + id);
+
+  }
   postContent(newCoconut: Content): Observable<Content> {
     this.messageService.addMessage("Content added!");
     return this.http.post<Content>("api/coconuts", newCoconut, this.httpOptions);

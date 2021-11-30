@@ -1,0 +1,30 @@
+<p>content-detail works!</p>
+
+<div *ngIf="content.id != null">
+  <img class="poster-image" [src]="content.imgUrl">
+  <div [style.color]="'blueviolet'">
+    The <span>ID</span> is {{content.id}}
+  </div>
+
+    <div class="titleContent">
+      {{content.title}}
+    </div>
+
+  <div>
+    {{content.author}}
+  </div>
+  <div>
+    {{content.type}}
+  </div>
+  <div>
+    {{content.body}}
+  </div>
+  <div>
+    {{content.tags}}
+  </div>
+</div>
+<div>
+  <button mat-raised-button>
+    <a routerLink="/content" routerLinkActive="active">Back to Content List Page</a><br>
+  </button>
+</div>

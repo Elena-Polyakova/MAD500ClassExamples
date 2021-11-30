@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
@@ -20,7 +19,9 @@ import { MatChipsModule } from '@angular/material/chips';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     HoverCardDirective,
     MessagesComponent,
     CreateComponent,
-    CreateDialogComponent
+    CreateDialogComponent,
+    ContentDetailComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,25 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatChipsModule,
     DragDropModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    RouterModule.forRoot([
+      {
+        path: 'content/:id',
+        component: ContentDetailComponent
+      },
+      {
+        path: 'content',
+        component: ContentListComponent
+      },
+      {
+        path: '',
+        component: AppComponent
+      },
+      {
+        path: '**',
+        component: NotFoundComponent
+      }
+    ])
   ],
   providers: [],
   // entryComponents: [
