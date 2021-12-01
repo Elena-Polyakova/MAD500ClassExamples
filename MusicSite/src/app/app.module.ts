@@ -20,6 +20,9 @@ import { MatChipsModule } from '@angular/material/chips';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -32,7 +35,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     HoverCardDirective,
     MessagesComponent,
     CreateComponent,
-    CreateDialogComponent
+    CreateDialogComponent,
+    ContentDetailComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {
       dataEncapsulation: false,
-      delay: 2000
+      delay: 500
     }),
     FormsModule,
     BrowserAnimationsModule,
@@ -49,7 +54,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatChipsModule,
     DragDropModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    RouterModule.forRoot([
+      { path: 'content/:id', component: ContentDetailComponent },
+      { path: '', component: ContentListComponent },
+      { path: '**', component: NotFoundComponent }
+    ])
   ],
   providers: [],
   // entryComponents: [

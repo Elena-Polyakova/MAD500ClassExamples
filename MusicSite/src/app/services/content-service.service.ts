@@ -16,6 +16,10 @@ export class ContentServiceService {
   };
 
   constructor(private messageService: MessageService, private http: HttpClient) { }
+  getContentItem(id: number): Observable<Content> {
+    this.messageService.addMessage("Content Retrieved!");
+    return this.http.get<Content>("api/coconuts/" + id);
+  }
 
   getContent(): Observable<Content[]> {
     this.messageService.addMessage("Content Retrieved!");
