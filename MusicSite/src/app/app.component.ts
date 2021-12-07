@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {LogUpdateService} from "./log-update.service";
+import {ContentServiceService} from "./services/content-service.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'MusicSite';
+
+  constructor(private contentService: ContentServiceService, private logService: LogUpdateService) { }
 }
